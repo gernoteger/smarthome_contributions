@@ -16,7 +16,10 @@ SET BindingIdInLowerCase=%BindingIdInCamelCase%
 
 CALL :LoCase BindingIdInLowerCase
 
-mvn archetype:generate -N -DarchetypeGroupId=org.eclipse.smarthome.archetype -DarchetypeArtifactId=org.eclipse.smarthome.archetype.binding -DarchetypeVersion=0.8.0-SNAPSHOT -DgroupId=org.eclipse.smarthome.binding -DartifactId=org.eclipse.smarthome.binding.%BindingIdInLowerCase% -Dpackage=org.eclipse.smarthome.binding.%BindingIdInLowerCase% -DarchetypeCatalog='file://../archetype-catalog.xml' -Dversion=0.8.0-SNAPSHOT -DbindingId=%BindingIdInLowerCase% -DbindingIdCamelCase=%BindingIdInCamelCase%
+call mvn archetype:generate -N -DarchetypeGroupId=org.eclipse.smarthome.archetype -DarchetypeArtifactId=org.eclipse.smarthome.archetype.binding -DarchetypeVersion=0.8.0-SNAPSHOT -DgroupId=org.eclipse.smarthome.binding -DartifactId=org.eclipse.smarthome.binding.%BindingIdInLowerCase% -Dpackage=org.eclipse.smarthome.binding.%BindingIdInLowerCase% -DarchetypeCatalog='file://../archetype-catalog.xml' -Dversion=0.8.0-SNAPSHOT -DbindingId=%BindingIdInLowerCase% -DbindingIdCamelCase=%BindingIdInCamelCase%
+
+call mvn archetype:generate -N -DarchetypeGroupId=org.eclipse.smarthome.archetype -DarchetypeArtifactId=org.eclipse.smarthome.archetype.binding.test -DarchetypeVersion=0.8.0-SNAPSHOT -DgroupId=org.eclipse.smarthome.binding -DartifactId=org.eclipse.smarthome.binding.%BindingIdInLowerCase%.test -Dpackage=org.eclipse.smarthome.binding.%BindingIdInLowerCase% -DarchetypeCatalog='file://../archetype-catalog.xml' -Dversion=0.8.0-SNAPSHOT -DbindingId=%BindingIdInLowerCase% -DbindingIdCamelCase=%BindingIdInCamelCase%
+
 
 SET BindingIdInLowerCase=
 SET BindingIdInCamelCase=
